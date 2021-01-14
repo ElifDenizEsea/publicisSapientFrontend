@@ -6,31 +6,22 @@ class App extends Component {
   render() {
     return (
       <div>
-        <table >
-          <tr>
-            <td>
-              <AddCards /> </td>
-            <td>
-            </td>
-            <td align="left">
+        <h3>Credit Cards System
+                    </h3>
+      
+              <AddCards />
+        
               <table>
                 <tr align="top">
-                <h4>Get All Cards
+                  <h4>Existing Cards
                     </h4>
-                  </tr>
-                  <tr>
-              <button className="Button"  onClick={(e) => this.getData(e)}>
-                Get all
-               </button>
-               </tr>
-               <tr>
-              <Cards cards={this.state.cards} />
-              </tr>
+                </tr>
+                <tr>
+                  <Cards cards={this.state.cards} />
+                </tr>
               </table>
-            </td>
-          </tr>
-        </table>
-      </div>
+          
+      </div >
     )
   }
 
@@ -38,8 +29,7 @@ class App extends Component {
     cards: []
   };
 
-  getData(event) {
-    event.preventDefault();
+  componentDidMount() {
     fetch('http://localhost:8080/api/getAllCards', {
       method: 'GET',
       headers: {
@@ -51,7 +41,7 @@ class App extends Component {
       .then((data) => {
         this.setState({ cards: data.cards });
       })
-  
+
       .catch(console.log)
   }
 }

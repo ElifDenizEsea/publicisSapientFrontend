@@ -3,11 +3,11 @@ import React from 'react'
 const Cards = (props) => {
   return (
     <table  className="ReactTable">
-      <tr align="top">
-        <td>     <h4 className="Check">Card Holder Name</h4></td>
-        <td>     <h4 className="Check">Card Number</h4></td>
-        <td>    <h4 className="Check">Balance</h4></td>
-        <td>     <h4 className="Check">Card Limit</h4></td>
+      <tr className="CheckLabel" align="top">
+        <td className="CheckLabel">     Name</td>
+        <td className="CheckLabel">Card Number</td>
+        <td className="CheckLabel">Balance</td>
+        <td  className="CheckLabel">Limit</td>
       </tr>
 
       {props.cards.length > 0 && props.cards.map((card) => (

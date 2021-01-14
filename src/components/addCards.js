@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '../App.css'; 
+import styles from '../App.css';
 
 const AddCards = (props) => {
 
@@ -17,11 +17,11 @@ const AddCards = (props) => {
             }
             )
         })
-        .then(res => res.json())
-        .then((data) => {
+            .then(res => res.json())
+            .then((data) => {
                 setResponseDescription(data.description);
             })
-        .then(function (response) {
+            .then(function (response) {
                 console.log(response);
             });
 
@@ -34,36 +34,32 @@ const AddCards = (props) => {
     return (
         <div>
             <form onSubmit={(e) => handleSubmit(e, name, number, limit)}>
-           
-                <table className="ReactTable" >
-                    <tr>
-                    <h4>
-                    Add new Card Card
+
+
+                <h4>
+                    Add
                     </h4>
-                    </tr>
-                    <tr>
-                        <td>  <span className="Check">Card Holder Name</span></td>
-                        <td>   <input className="Field" name="name" onChange={(e) => setName(e.target.value)} /></td>
-                    </tr>
-                    <tr>
-                        <td>    <span className="Check">Card Number</span></td>
-                        <td>    <input name="number" className="Field" type="number" onChange={(e) => setNumber(e.target.value)} /></td>
+                <span className="Check">Name</span>
+                <br/>
+                <input className="Field" name="name" onChange={(e) => setName(e.target.value)} />
+                <br/><br/>
+                <span className="Check">Card Number</span>
+                <br/>
+                <input name="number" className="Field" type="number" onChange={(e) => setNumber(e.target.value)} />
+                <br/>
+                <br/>
+                <span className="Check"> Limit</span>
+                <br/>
+                <input name="limit" className="Field" type="number" onChange={(e) => setLimit(e.target.value)} />
+                <br/>
+                <br/>
+                <div class="align-right">
+                    <button className="Button" type="submit" >Add</button>
+                </div>
 
-                    </tr>
-                    <tr>
-                        <td>     <span  className="Check">Card Limit</span></td>
-                        <td>     <input name="limit" className="Field" type="number" onChange={(e) => setLimit(e.target.value)} /></td>
-                    </tr>
-                    <tr>
-                        <div class="align-right">
-                            <button className="Button" type="submit" >Submit</button>
-                        </div>
-                    </tr>
-                    <tr>
+                <br/>
+                <span class="text">{responseDescription}</span>
 
-                        <span class="text">{responseDescription}</span>
-                    </tr>
-                </table>
             </form>
         </div>
     )
