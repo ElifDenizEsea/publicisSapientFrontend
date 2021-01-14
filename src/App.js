@@ -6,11 +6,30 @@ class App extends Component {
   render() {
     return (
       <div>
-        <AddCards/>
-        <button onClick={(e) => this.getData(e)}>
-          Get all
-        </button>
-        <Cards cards={this.state.cards} />
+        <table >
+          <tr>
+            <td>
+              <AddCards /> </td>
+            <td>
+            </td>
+            <td align="left">
+              <table>
+                <tr align="top">
+                <h4>Get All Cards
+                    </h4>
+                  </tr>
+                  <tr>
+              <button className="Button"  onClick={(e) => this.getData(e)}>
+                Get all
+               </button>
+               </tr>
+               <tr>
+              <Cards cards={this.state.cards} />
+              </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
       </div>
     )
   }
@@ -19,18 +38,20 @@ class App extends Component {
     cards: []
   };
 
-   getData (event){
+  getData(event) {
     event.preventDefault();
     fetch('http://localhost:8080/api/getAllCards', {
-			method: 'GET'	,
-			headers: {
-				"Content-type": "application/json; charset=UTF-8"
-			}}
-	)
-      .then(res =>res.json())
+      method: 'GET',
+      headers: {
+        "Content-type": "application/json; charset=UTF-8"
+      }
+    }
+    )
+      .then(res => res.json())
       .then((data) => {
-        this.setState({ cards: data.cards })
+        this.setState({ cards: data.cards });
       })
+  
       .catch(console.log)
   }
 }

@@ -1,21 +1,25 @@
 import React from 'react'
 
-
-
-const Cards = ( props ) => {
+const Cards = (props) => {
   return (
-    <div>
-      {props.cards.length>0 && props.cards.map((card) => (
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-name">{card.name}</h5>
-            <h5 class="card-number">{card.number}</h5>
-            <h5 class="card-balance">{card.balance}</h5>
-            <h5 class="card-limit">{card.cardLimit}</h5>
-          </div>
-        </div>
+    <table  className="ReactTable">
+      <tr align="top">
+        <td>     <h4 className="Check">Card Holder Name</h4></td>
+        <td>     <h4 className="Check">Card Number</h4></td>
+        <td>    <h4 className="Check">Balance</h4></td>
+        <td>     <h4 className="Check">Card Limit</h4></td>
+      </tr>
+
+      {props.cards.length > 0 && props.cards.map((card) => (
+        <tr >
+          <td><span class="card-name">{card.name}</span></td>
+          <td> <span class="card-number">{card.number}</span></td>
+          <td> <span class="card-balance">{card.balance}</span></td>
+          <td> <span class="card-limit">{card.cardLimit}</span></td>
+        </tr>
       ))}
-    </div>
+
+    </table>
   )
 };
 

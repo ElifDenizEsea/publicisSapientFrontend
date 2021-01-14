@@ -13,6 +13,68 @@
   }
 }
 
+.ReactTable {
+  position: relative;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-style: solid;
+  width: 700px;
+  border-width: 5px 5px 2.5px
+}
+.ReactTable .rt-thead .rt-tr {
+  text-align: center
+}
+ td { border-width: 1px;
+  border-style: solid;}
+ tr {  border-width: 1px;
+  border-style: solid;}
+
+.Field {
+  border-radius: 4px;
+  background-color: rgba(255,255,255,0.3);
+  transition: 0.3s all;
+}
+.Field:hover {
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+}
+
+.Button {
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 8px;
+  color: red;
+}
+
+.Check {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+  cursor: pointer;
+  }
+  
+  .Check input {
+  display:none;
+  }
+  
+  input[type="radio"]:checked + .check {
+  background-color: blue; 
+  }
+  
+  .container {
+  margin: 0 auto;
+  }
+
+.ReactTable .rt-thead.-filters {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.ReactTable .rt-thead.-filters .rt-th {
+  border-right: 1px solid rgba(0, 0, 0, 0.02)
+}
+
+
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
